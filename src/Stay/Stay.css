@@ -2,6 +2,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+    padding:0 1rem;
 }
 
 small{
@@ -10,4 +11,5 @@ small{
 
 h2{
     color: #333333;
+    
 }

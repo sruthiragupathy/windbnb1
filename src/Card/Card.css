@@ -1,0 +1,30 @@
+.card{
+    width:20rem;
+    /* //padding:0.5rem; */
+    display:flex;
+    flex-direction:column;
+    
+    justify-content: center;
+    align-items:flex-start;
+    color:#333;
+    
+}
+
+.card-img {
+   width:20rem;
+    height:17rem;
+    border-radius:1.5rem;
+    margin:1rem 0;
+}
+
+.card-flex{
+    width:95%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#4F4F4F
+}
+
+.star-img{
+    margin-right:5px;
+}

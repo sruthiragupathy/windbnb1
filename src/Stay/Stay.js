@@ -3,7 +3,7 @@ import './Stay.css';
 
 const Stay = () =>{
     return (
-        <div class="stay">
+        <div className="stay">
             <h2>Stays in Finland</h2>
             <small>12+ stays</small>
 

@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../../Assets/logo.svg";
-import searchIcon from "../../Assets/search.svg";
 import './Header.css';
 const Header = () =>{
     return (
