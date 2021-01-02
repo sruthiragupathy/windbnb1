@@ -1,0 +1,51 @@
+
+.header{
+    --light-gray:#F2F2F2;
+    --red:rgba(235, 87, 87, 0.9);
+    min-height:4rem;
+    padding:1rem;
+    box-sizing: border-box;
+    margin-bottom:2.5rem;
+}
+
+.header-logo{
+    padding: 0 0 1.5rem 0;
+}
+
+.header-form{
+    max-width:25rem;
+    float:right;
+    border-radius:1rem;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+
+.header-input{
+    height:3rem;
+    width:40%;
+    text-align:center;
+    border:none;
+    border-right:1px solid var(--light-gray);
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.header-input:first-child{
+border-top-left-radius: 1rem;
+border-bottom-left-radius: 1rem;
+}
+
+.header-button{
+    width:16%;
+    height:3rem;
+   color:var(--red);
+   font-weight:bold;
+   background:#fff;
+   border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border:none;
+   
+}
+

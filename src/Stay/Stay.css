@@ -1,0 +1,13 @@
+.stay{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+small{
+    color:#4F4F4F;
+}
+
+h2{
+    color: #333333;
+}
