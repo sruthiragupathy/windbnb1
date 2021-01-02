@@ -9,7 +9,8 @@ const Card = ({hotel}) =>{
     
             <img className="card-img" src = {hotel.photo} alt="hotel"></img>
             <div className="card-flex">
-                <small>{hotel.type}</small>
+                {hotel.superHost && <small className="host">SUPER HOST</small>}
+                <small class="type">{hotel.type}</small>
                 
                 <small><img src={star} alt="star" className="star-img"></img>{hotel.rating}</small>
                 

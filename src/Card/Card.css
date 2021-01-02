@@ -28,3 +28,14 @@
 .star-img{
     margin-right:5px;
 }
+
+.host{
+    border:1px solid #4F4F4F;
+    padding:0.25rem;
+    border-radius:0.75rem;
+    font-weight:bold;
+}
+
+.type{
+    color:#828282;
+}
