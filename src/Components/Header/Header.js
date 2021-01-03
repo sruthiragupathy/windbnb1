@@ -16,11 +16,13 @@ const Header = (props) =>{
         setFocus(true);
         setOpen({...open,location:true,guests:false});
         
+        
     }
 
     function toggleGuests(e){
         setFocus(true);
         setOpen({...open,location:false,guests:true});
+       
         
     }
 

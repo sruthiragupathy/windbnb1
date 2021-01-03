@@ -11,8 +11,9 @@ const Cards = (props) =>{
         const city = place.split(",")[0];
         console.log(city);
         const hot = stays.filter(item=>(item.city === city))
+        console.log(hot);
         setHotels(hot);
-    },[place])
+    },[place,stays])
     
     return(
         <div className="hotel-card">
