@@ -7,7 +7,7 @@ import Cards from "./Card/Cards";
 
 function App() {
   const [data,setData] = useState([]);
-  const [place,setPlace] = useState('');
+  const [place,setPlace] = useState('Helsinki, Finland');
   const getData=()=>{
     fetch('stays.json',{
       headers:{
@@ -22,7 +22,7 @@ function App() {
     .then(json=>{
       
       setData(json);
-      console.log("json",json,typeof(json))
+    
     })
   }
 
@@ -31,10 +31,10 @@ function App() {
   },[])
   return (
     <div className="App">
-     
-      <Header/>
+      
+      <Header place={place} fn={(value)=>setPlace(value)}/>
       <Stay/>
-      <Cards stays={data}/>
+      <Cards stays={data} place={place}/>
     </div>
   );
 }

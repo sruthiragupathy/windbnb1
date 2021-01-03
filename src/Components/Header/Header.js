@@ -1,7 +1,11 @@
 import React,{useState} from "react";
 import logo from "../../Assets/logo.svg";
 import './Header.css';
-const Header = () =>{
+const Header = (props) =>{
+    
+    const {place,fn} = props
+    
+    const places = ["Helsinki, Finland","Turku, Finland","Oulu, Finland","Vaasa, Finland"];
     const [focus,setFocus] = useState(false);
     const [open,setOpen] = useState({
         location:false,
@@ -46,17 +50,20 @@ const Header = () =>{
         guestsClass.push("input-border");
 
     }
-    console.log({open,locationClass,guestsClass});
     
+    function dropDownHandler(e){
+        fn(e.target.innerText);
+
+    }
 
 
     return (
         <div class="nav">
         <nav className="header">
-            {console.log(open)}
+        
             <img src={logo} alt="logo" className = {logoClass.join(' ')} ></img>
             <div className={headerClass.join(' ')}>
-                <input className = {locationClass.join(' ')} name="location" onClick={toggleLocation} value="Helsinki, Finland"/>
+                <input className = {locationClass.join(' ')} name="location" onClick={toggleLocation} value={place}/>
                 <input  className = {guestsClass.join(' ')} name="guests" onClick={toggleGuests} value="Add guests"/>
                 <button className={buttonClass.join(' ')}>Go</button>
                 
@@ -65,10 +72,10 @@ const Header = () =>{
                     {
                         open.location && (
                         <ul className="location">
-                            <li>Helsinki, Finland</li>
-                            <li>Turku, Finland</li>
-                            <li>Oulu, Finland</li>
-                            <li>Vaasa, Finland</li>
+                            {places.map((item,index)=>{
+                                return <li key={index} onClick={dropDownHandler}>{item}</li>
+                            })}
+                            
                         </ul>
                         )
                         
