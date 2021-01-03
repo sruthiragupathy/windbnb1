@@ -13,10 +13,11 @@
 }
 
 .header-form{
-    max-width:25rem;
+    min-width:20rem;
     float:right;
     border-radius:1rem;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    
     
 }
 
@@ -30,6 +31,7 @@
     border-right:1px solid var(--light-gray);
     font-family: 'Montserrat', sans-serif;
     
+    
 }
 
 .header-input:first-child{
@@ -40,6 +42,7 @@ border-bottom-left-radius: 1rem;
 .header-button{
     width:16%;
     height:3rem;
+    
    color:var(--red);
    font-weight:bold;
    background:#fff;
@@ -49,3 +52,83 @@ border-bottom-left-radius: 1rem;
    
 }
 
+.logo-focus{
+    display:none;
+}
+
+.btn{
+    display:none;
+
+}
+
+.full-width{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    margin-bottom:0;
+
+}
+
+.input{
+    width:50%;
+    border-right:2px solid var(--light-gray);
+    margin-bottom:0;
+    text-align:left;
+    padding-left:1rem;
+}
+
+.input:nth-child(2){
+    border-top-right-radius: 1rem;
+border-bottom-right-radius: 1rem;
+}
+
+
+.dropdown{
+    width:calc(100% - 5.5rem);
+
+   
+    box-sizing:border-box;
+    z-index:2;
+    left:50%;
+    transform:translateX(-50%);
+    position:absolute;
+    background:white;
+    font-size:14px;
+    top:6.75rem;
+    
+}
+.dropdown ul{
+    list-style:none;
+    padding-inline-start:5px;
+}
+
+
+
+li{
+    padding:0.75rem;
+
+    
+}
+
+.location{
+    width: 50%;
+    color:#4F4F4F;
+}
+
+.guests{
+    width:50%;
+    margin-left:50%;
+}
+
+.location li:hover{
+    background:#E5E7EB;
+}
+
+.input-border{
+    border:1.5px solid #4B5563;
+    border-radius:1rem;
+}
+
+input:focus{
+    outline: none;
+}
