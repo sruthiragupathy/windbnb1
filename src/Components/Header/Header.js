@@ -1,9 +1,11 @@
 import React,{useState} from "react";
 import logo from "../../Assets/logo.svg";
+import search from "../../Assets/search.svg";
+
 import './Header.css';
 const Header = (props) =>{
     
-    const {place,fn} = props
+    const {place,fn,color} = props
     
     const places = ["Helsinki, Finland","Turku, Finland","Oulu, Finland","Vaasa, Finland"];
     const [focus,setFocus] = useState(false);
@@ -14,9 +16,17 @@ const Header = (props) =>{
     });
     function toggleLocation(e){
         setFocus(true);
+        color(true);
         setOpen({...open,location:true,guests:false});
         
         
+    }
+
+    function removeToggleLocation(){
+        setFocus(false);
+        color(false);
+        setOpen({...open,location:false});
+
     }
 
     function toggleGuests(e){
@@ -27,9 +37,7 @@ const Header = (props) =>{
     }
 
 
-    function removeClass(){
-        setFocus(false);
-    }
+    
 
     
     let locationClass=["header-input"];
@@ -37,12 +45,16 @@ const Header = (props) =>{
     let buttonClass = ["header-button"];
     let headerClass = ["header-form"]
     let logoClass = ["header-logo"]
+    let dropDownClass = ["dropdown"]
     if(focus){
         locationClass.push("input");
         guestsClass.push("input");
         buttonClass.push("btn");
         headerClass.push("full-width");
         logoClass.push("logo-focus");
+        dropDownClass.push("dropdown-visible");
+
+        
     }
 
     if(open.location){
@@ -55,22 +67,27 @@ const Header = (props) =>{
     
     function dropDownHandler(e){
         fn(e.target.innerText);
+        console.log(e.target.innerText);
+        
+        headerClass.push("reverse");
+        setTimeout(removeToggleLocation,600);
+
 
     }
 
 
     return (
         <div class="nav">
-        <nav className="header">
+        <nav className = "header">
         
             <img src={logo} alt="logo" className = {logoClass.join(' ')} ></img>
             <div className={headerClass.join(' ')}>
-                <input className = {locationClass.join(' ')} name="location" onClick={toggleLocation} value={place}/>
-                <input  className = {guestsClass.join(' ')} name="guests" onClick={toggleGuests} value="Add guests"/>
-                <button className={buttonClass.join(' ')}>Go</button>
+                <input className = {locationClass.join(' ')} name="location" onFocus={toggleLocation}  value={place}/>
+                <input  className = {guestsClass.join(' ')} name="guests" onFocus={toggleGuests} value="Add guests"/>
+                {/* <button className={buttonClass.join(' ')}>Go</button> */}
                 
             </div>
-            <div className="dropdown">
+            <div className={dropDownClass.join(' ')}>
                     {
                         open.location && (
                         <ul className="location">

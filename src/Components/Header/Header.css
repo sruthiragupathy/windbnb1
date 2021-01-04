@@ -6,6 +6,7 @@
     padding:1rem;
     box-sizing: border-box;
     margin-bottom:2.2rem;
+    
 }
 
 .header-logo{
@@ -15,9 +16,11 @@
 .header-form{
     min-width:20rem;
     float:right;
+    display:flex;
+    flex-direction:row;
     border-radius:1rem;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-    
+    transition: width 1s ease-in-out;
     
 }
 
@@ -25,11 +28,12 @@
 
 .header-input{
     height:3rem;
-    width:40%;
+    width:50%;
     text-align:center;
     border:none;
     border-right:1px solid var(--light-gray);
     font-family: 'Montserrat', sans-serif;
+    
     
     
 }
@@ -39,18 +43,6 @@ border-top-left-radius: 1rem;
 border-bottom-left-radius: 1rem;
 }
 
-.header-button{
-    width:16%;
-    height:3rem;
-    
-   color:var(--red);
-   font-weight:bold;
-   background:#fff;
-   border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    border:none;
-   
-}
 
 .logo-focus{
     display:none;
@@ -63,9 +55,10 @@ border-bottom-left-radius: 1rem;
 
 .full-width{
     width:100%;
-    display:flex;
-    flex-direction:row;
+    
     margin-bottom:0;
+    animation:reducetime 1s ease-in-out;
+    
 
 }
 
@@ -75,18 +68,18 @@ border-bottom-left-radius: 1rem;
     margin-bottom:0;
     text-align:left;
     padding-left:1rem;
+
 }
 
-.input:nth-child(2){
+input:nth-child(2){
     border-top-right-radius: 1rem;
 border-bottom-right-radius: 1rem;
 }
 
 
-.dropdown{
-    width:calc(100% - 5.5rem);
 
-   
+
+.dropdown-visible{
     box-sizing:border-box;
     z-index:2;
     left:50%;
@@ -95,8 +88,12 @@ border-bottom-right-radius: 1rem;
     background:white;
     font-size:14px;
     top:6.75rem;
-    
+    animation:time 1s ease-in-out;
+    width:calc(100% - 5.5rem);
+    /* background:green; */
 }
+
+
 .dropdown ul{
     list-style:none;
     padding-inline-start:5px;
@@ -113,6 +110,7 @@ li{
 .location{
     width: 50%;
     color:#4F4F4F;
+    
 }
 
 .guests{
@@ -132,3 +130,23 @@ li{
 input:focus{
     outline: none;
 }
+
+@keyframes reducetime {
+    0% {
+      width:22rem ;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+@keyframes time {
+    0% {
+      width: 22rem;
+      left:80%;
+    }
+    100% {
+      width: calc(100% - 5.5rem);
+      left:50%;
+    }
+  }

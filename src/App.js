@@ -8,7 +8,7 @@ import Cards from "./Card/Cards";
 function App() {
   const [data,setData] = useState([]);
   const [place,setPlace] = useState('Helsinki, Finland');
-  
+  const [color,setColor] = useState(false);
   const getData=()=>{
     fetch('stays.json',{
       headers:{
@@ -33,9 +33,10 @@ function App() {
   return (
     <div className="App" >
       
-      <Header place={place} fn={(value)=>setPlace(value)} />
+      <Header place={place} fn={(value)=>setPlace(value)} color={(value)=>setColor(value)} />
       <Stay/>
       <Cards stays={data} place={place} />
+      
     </div>
   );
 }
