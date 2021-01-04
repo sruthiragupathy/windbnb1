@@ -3,6 +3,10 @@
 .App { 
   margin:2rem 2rem;
   box-sizing: border-box;
+  --dark-blue:hsl(233,26%,24%);
+  overflow-y:hidden;
+  
+  
 }
 
 
@@ -11,9 +15,25 @@
 }
 
 .overlay{
-  position:absolute;  
+  background-image:linear-gradient(hsl(233,26%,24%),transparent);
+  position:fixed;
+  
+  top:18.67rem;
+  bottom:0;
   left:0;
   right:0;
-  bottom:0;
-  background-image:linear-gradient(var(--dark-blue),transparent);
+  animation:fade-in 500ms ease-in-out;
+}
+
+@keyframes fade-in{
+  from{
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+.noscroll{
+  overflow: hidden;
 }

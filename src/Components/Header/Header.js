@@ -16,6 +16,9 @@ const Header = (props) =>{
     });
     function toggleLocation(e){
         setFocus(true);
+        // setTimeout(
+        //     function(){color(true)}
+        //     ,800);
         color(true);
         setOpen({...open,location:true,guests:false});
         
@@ -102,7 +105,7 @@ const Header = (props) =>{
                     {
                         open.guests && (
                             <ul className="guests">
-                                <li>Helsinki</li>
+                                <li>Option 1</li>
                                 <li>Option 2</li>
                                 <li>Option 3</li>
                                 <li>Option 4</li>

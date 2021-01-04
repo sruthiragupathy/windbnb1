@@ -4,6 +4,7 @@ import './App.css';
 import Header from "./Components/Header/Header";
 import Stay from "./Stay/Stay";
 import Cards from "./Card/Cards";
+import Box from '@material-ui/core/Box';
 
 function App() {
   const [data,setData] = useState([]);
@@ -29,15 +30,35 @@ function App() {
 
   useEffect(()=>{
     getData();
-  },[])
+    console.log(data);
+    noscroll();
+  },[color])
+
+  function noscroll(){
+    if(color){
+      document.body.style.overflow= "hidden";
+      console.log(color);
+   }
+   else{
+    document.body.style.overflow= "scroll";
+
+   }
+  }
+
+  
+  
   return (
-    <div className="App" >
+    
+    <Box className="App">
+      {console.log("hi")}
+      {color &&  <div class="overlay"></div> }
       
       <Header place={place} fn={(value)=>setPlace(value)} color={(value)=>setColor(value)} />
       <Stay/>
       <Cards stays={data} place={place} />
       
-    </div>
+    </Box>
+    
   );
 }
 

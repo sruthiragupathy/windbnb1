@@ -20,8 +20,8 @@
     flex-direction:row;
     border-radius:1rem;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-    transition: width 1s ease-in-out;
-    
+    /* transition: width 1s ease-in-out;
+     */
 }
 
 
@@ -133,7 +133,7 @@ input:focus{
 
 @keyframes reducetime {
     0% {
-      width:22rem ;
+      width:20rem ;
     }
     100% {
       width: 100%;
@@ -142,7 +142,7 @@ input:focus{
 
 @keyframes time {
     0% {
-      width: 22rem;
+      width: 20rem;
       left:80%;
     }
     100% {
