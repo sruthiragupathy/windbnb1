@@ -2,6 +2,9 @@
 .header{
     --light-gray:#F2F2F2;
     --red:rgba(235, 87, 87, 0.9);
+    --dark-gray:#374151;
+    --light-gray1:#6B7280;
+    --light-gray2:#D1D5DB;
     min-height:4rem;
     padding:1rem;
     box-sizing: border-box;
@@ -101,7 +104,7 @@ border-bottom-right-radius: 1rem;
 
 
 
-li{
+.location li{
     padding:0.75rem;
 
     
@@ -110,13 +113,10 @@ li{
 .location{
     width: 50%;
     color:#4F4F4F;
+    margin-block-end:1.35em;
     
 }
 
-.guests{
-    width:50%;
-    margin-left:50%;
-}
 
 .location li:hover{
     background:#E5E7EB;
@@ -150,3 +150,86 @@ input:focus{
       left:50%;
     }
   }
+
+  .guests{
+      color:var(--dark-gray);
+      font-size:14px;
+     
+      
+  }
+
+  .guests li{
+      padding-bottom:0.024rem;
+  }
+
+  .guests span{
+      display:block;
+      line-height:1.15rem;
+      color:var(--dark-gray);
+  }
+
+  .guests h5{
+      margin-block-start:0.4em;
+      margin-block-end:0.5em;
+
+  }
+
+  .person span:nth-child(2){
+    color:var(--light-gray2);
+  }
+
+  .counter span{
+      display:inline;
+      margin-right:1rem;
+  }
+
+.counter{
+    margin-block-start:0.6em;
+}
+
+.person{
+    margin-block-end:0.55em;
+}
+
+.counter button:nth-child(1),.counter span:nth-child(3),.counter button:nth-child(3){
+    border: 1.5px solid var(--light-gray1);
+    padding:0rem 0.5rem;
+    color:var(--light-gray1);
+    font-weight:700;
+    font-size:14px;
+    border-radius:0.5rem;
+    cursor:pointer;
+    background:white;
+    margin-right:1rem;
+    
+}
+
+.counter button:nth-child(1):hover,.counter button:nth-child(3):hover{
+    background:var(--light-gray);
+
+}
+
+.guest-div{
+    display: flex;
+    width:50%;
+    margin-left:50%;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+
+.guest-div ul{
+    margin-block-start:0.4em;
+    margin-block-end:0.45em;
+}
+
+.guest-div img{
+    padding:0.35rem;
+    cursor:pointer;
+    border: 1.5px solid var(--light-gray1);
+    margin:1rem 0.5rem 0 0;
+    border-radius:0.25rem;
+}
+
+.guest-div img:hover{
+    background:var(--light-gray2);
+}

@@ -1,6 +1,8 @@
 import React,{useState} from "react";
 import logo from "../../Assets/logo.svg";
 import search from "../../Assets/search.svg";
+import close from "../../Assets/close.svg";
+
 
 import './Header.css';
 const Header = (props) =>{
@@ -14,6 +16,12 @@ const Header = (props) =>{
         guests:false
 
     });
+
+    const [count,setCount] = useState({
+        adult:0,
+        child:0
+    }) 
+    
     function toggleLocation(e){
         setFocus(true);
         // setTimeout(
@@ -37,6 +45,11 @@ const Header = (props) =>{
         setOpen({...open,location:false,guests:true});
        
         
+    }
+
+    function addCounter(e){
+        console.log("hi");
+        // setCount({...count,name:count[name]+1})
     }
 
 
@@ -104,12 +117,28 @@ const Header = (props) =>{
                     }
                     {
                         open.guests && (
+                            <div className="guest-div">
                             <ul className="guests">
-                                <li>Option 1</li>
-                                <li>Option 2</li>
-                                <li>Option 3</li>
-                                <li>Option 4</li>
+                                <li>
+                                    <p className="person"><span>Adults</span><span>Ages from 13</span></p>
+                                    <p className="counter">
+                                        <button>-</button>
+                                        <span>{count.adult}</span>
+                                        <button name="adult" onClick = {addCounter} >+</button>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className="person"><span>Children</span><span>Ages 2 - 12</span></p>
+                                    <p className="counter">
+                                        <button>-</button>
+                                        <span>{count.child}</span>
+                                        <button>+</button>
+                                    </p>
+                                </li>
+                                
                             </ul>
+                            <img src={close}></img>
+                            </div>
                             )
                     }
                      
