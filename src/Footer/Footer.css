@@ -1,0 +1,27 @@
+.footer{
+    position:relative;
+    bottom:0;
+    margin:auto;
+    width:50%;
+    color:#4B5563;
+    text-align:center;
+    border-top:1px solid #4B5563;
+    margin-top:0.5rem;
+    
+}
+
+.footer li{
+    display:inline;
+}
+
+.footer ul{
+   padding-inline-start: 0;
+   display:flex;
+   justify-content: space-around;
+   padding:0 1rem;
+
+}
+a{
+    color:#4B5563;
+
+}

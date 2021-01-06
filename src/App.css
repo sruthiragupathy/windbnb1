@@ -1,7 +1,7 @@
 
 
 .App { 
-  margin:2rem 2rem;
+  padding:2rem 2rem 0 2rem;
   box-sizing: border-box;
   --dark-blue:hsl(233,26%,24%);
   overflow-y:hidden;

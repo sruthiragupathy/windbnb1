@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import Card from "./Card";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import "./Cards.css";
-
+import Footer from "../Footer/Footer";
 const Cards = (props) =>{
     const {stays,place,gCount} = props;
     const [hotels,setHotels] = useState([]);
@@ -25,11 +25,12 @@ const Cards = (props) =>{
 
     if(hotels.length===0){
         return  <div className="loader">
-            <CircularProgress/>
+            <CircularProgress color="#6B7280"/>
         </div>
     }
     
     return(
+        <>
         <div className="hotel-card">
         {
             
@@ -38,7 +39,10 @@ const Cards = (props) =>{
                 return <Card  key={index} hotel={item}></Card>
             })
         }
+        
         </div>
+        {hotels && <Footer/>}
+        </>
     )
 }
 
