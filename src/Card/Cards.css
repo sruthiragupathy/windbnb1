@@ -25,3 +25,14 @@
     background-image:linear-gradient(var(--dark-blue),transparent);
     
 }
+
+.loader{
+    position:absolute;
+    width:100vw;
+   height:70vh;
+   left:0;
+   right:0;
+   display:flex;
+   justify-content: center;
+   align-items:center;
+}

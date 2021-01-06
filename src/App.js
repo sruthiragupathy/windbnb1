@@ -10,6 +10,7 @@ function App() {
   const [data,setData] = useState([]);
   const [place,setPlace] = useState('Helsinki, Finland');
   const [color,setColor] = useState(false);
+  const [guestCount,setGuestCount] = useState(0);
   const getData=()=>{
     fetch('stays.json',{
       headers:{
@@ -30,14 +31,14 @@ function App() {
 
   useEffect(()=>{
     getData();
-    console.log(data);
+    // console.log(data);
     noscroll();
   },[color])
 
   function noscroll(){
     if(color){
       document.body.style.overflow= "hidden";
-      console.log(color);
+      // console.log(color);
    }
    else{
     document.body.style.overflow= "scroll";
@@ -50,12 +51,12 @@ function App() {
   return (
     
     <Box className="App">
-      {console.log("hi")}
-      {color &&  <div class="overlay"></div> }
+      {console.log(guestCount)}
+      {color &&  <div className="overlay fade-in"></div> }
       
-      <Header place={place} fn={(value)=>setPlace(value)} color={(value)=>setColor(value)} />
+      <Header place={place} fn={(value)=>setPlace(value)} color={(value)=>setColor(value)} gCount={(value)=>setGuestCount(value)} />
       <Stay/>
-      <Cards stays={data} place={place} />
+      <Cards stays={data} place={place} gCount={guestCount}/>
       
     </Box>
     

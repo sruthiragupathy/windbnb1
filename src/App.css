@@ -22,6 +22,10 @@
   bottom:0;
   left:0;
   right:0;
+  
+}
+
+.fade-in{
   animation:fade-in 500ms ease-in-out;
 }
 
@@ -34,6 +38,3 @@
   }
 }
 
-.noscroll{
-  overflow: hidden;
-}

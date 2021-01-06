@@ -1,13 +1,13 @@
 import React,{useState} from "react";
 import logo from "../../Assets/logo.svg";
-import search from "../../Assets/search.svg";
+
 import close from "../../Assets/close.svg";
 
 
 import './Header.css';
 const Header = (props) =>{
     
-    const {place,fn,color} = props
+    const {place,fn,color,gCount} = props
     
     const places = ["Helsinki, Finland","Turku, Finland","Oulu, Finland","Vaasa, Finland"];
     const [focus,setFocus] = useState(false);
@@ -33,35 +33,35 @@ const Header = (props) =>{
         
     }
 
-    function removeToggleLocation(){
-        setFocus(false);
-        color(false);
-        setOpen({...open,location:false});
-
-    }
+   
 
     function toggleGuests(e){
         setFocus(true);
+        color(true)
         setOpen({...open,location:false,guests:true});
        
         
     }
 
-    function addCounter(e){
-        console.log("hi");
-        // setCount({...count,name:count[name]+1})
+    
+    function handleCounter(e){
+        if(e.target.innerText==="+"){
+        setCount({...count,[e.target.name]:count[e.target.name]+1})
+        }
+        else if(e.target.innerText==="-"){
+            if(count[e.target.name]>0){
+                setCount({...count,[e.target.name]:count[e.target.name]-1})
+
+            }
+        }
     }
 
-
-    
-
-    
     let locationClass=["header-input"];
-    let guestsClass=["header-input"];
+    let guestsClass=["header-input","guest-color"];
     let buttonClass = ["header-button"];
     let headerClass = ["header-form"]
     let logoClass = ["header-logo"]
-    let dropDownClass = ["dropdown"]
+    let dropDownClass = []
     if(focus){
         locationClass.push("input");
         guestsClass.push("input");
@@ -69,8 +69,6 @@ const Header = (props) =>{
         headerClass.push("full-width");
         logoClass.push("logo-focus");
         dropDownClass.push("dropdown-visible");
-
-        
     }
 
     if(open.location){
@@ -80,13 +78,23 @@ const Header = (props) =>{
         guestsClass.push("input-border");
 
     }
+
+    function removeToggleLocation(){
+        setFocus(false);
+        color(false);
+        setOpen({...open,location:false,guests:false});
+        gCount(count.adult+count.child);
+
+    }
     
     function dropDownHandler(e){
+        if(e.target.innerText){
         fn(e.target.innerText);
-        console.log(e.target.innerText);
+        }
+        // console.log(e.target.innerText);
         
-        headerClass.push("reverse");
-        setTimeout(removeToggleLocation,600);
+        
+        setTimeout(removeToggleLocation,500);
 
 
     }
@@ -98,9 +106,8 @@ const Header = (props) =>{
         
             <img src={logo} alt="logo" className = {logoClass.join(' ')} ></img>
             <div className={headerClass.join(' ')}>
-                <input className = {locationClass.join(' ')} name="location" onFocus={toggleLocation}  value={place}/>
-                <input  className = {guestsClass.join(' ')} name="guests" onFocus={toggleGuests} value="Add guests"/>
-                {/* <button className={buttonClass.join(' ')}>Go</button> */}
+                <input className = {locationClass.join(' ')} name="location" onClick={toggleLocation}  value={place}/>
+                <input  className = {guestsClass.join(' ')} name="guests" onClick={toggleGuests} value="Add guests"/>
                 
             </div>
             <div className={dropDownClass.join(' ')}>
@@ -122,22 +129,22 @@ const Header = (props) =>{
                                 <li>
                                     <p className="person"><span>Adults</span><span>Ages from 13</span></p>
                                     <p className="counter">
-                                        <button>-</button>
+                                        <button name="adult" onClick={handleCounter}>-</button>
                                         <span>{count.adult}</span>
-                                        <button name="adult" onClick = {addCounter} >+</button>
+                                        <button name="adult" onClick = {handleCounter} >+</button>
                                     </p>
                                 </li>
                                 <li>
                                     <p className="person"><span>Children</span><span>Ages 2 - 12</span></p>
                                     <p className="counter">
-                                        <button>-</button>
+                                        <button name="child" onClick={handleCounter}>-</button>
                                         <span>{count.child}</span>
-                                        <button>+</button>
+                                        <button name="child" onClick = {handleCounter} >+</button>
                                     </p>
                                 </li>
                                 
                             </ul>
-                            <img src={close}></img>
+                            <img src={close} alt="close-icon" onClick={dropDownHandler}></img>
                             </div>
                             )
                     }
