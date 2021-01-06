@@ -1,7 +1,9 @@
 
 
 .App { 
-  padding:2rem 2rem 0 2rem;
+  width: 100%;
+    margin: auto;
+    margin-top: 1.5rem;
   box-sizing: border-box;
   --dark-blue:hsl(233,26%,24%);
   overflow-y:hidden;
@@ -18,7 +20,7 @@
   background-image:linear-gradient(hsl(233,26%,24%),transparent);
   position:fixed;
   
-  top:18.95rem;
+  top:17.2rem;
   bottom:0;
   left:0;
   right:0;

@@ -5,7 +5,7 @@ import Header from "./Components/Header/Header";
 import Stay from "./Stay/Stay";
 import Cards from "./Card/Cards";
 import Box from '@material-ui/core/Box';
-import Footer from "./Footer/Footer"
+
 
 function App() {
   const [data,setData] = useState([]);
@@ -58,8 +58,7 @@ function App() {
       <Header place={place} fn={(value)=>setPlace(value)} color={(value)=>setColor(value)} gCount={(value)=>setGuestCount(value)} />
       <Stay/>
       <Cards stays={data} place={place} gCount={guestCount}/>
-      {/* <Footer/> */}
-      
+     
     </Box>
     
   );

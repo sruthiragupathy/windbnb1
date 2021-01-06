@@ -1,20 +1,24 @@
 .card{
     width:20rem;
-    /* //padding:0.5rem; */
+    padding:0.75rem;
     display:flex;
     flex-direction:column;
     
     /* justify-content: center; */
-    align-items:flex-start;
+    align-items:center;
     color:#333;
-    
-    
+    /* border:1px solid #9CA3AF; */
+    border-radius:1rem;
+    box-shadow:         3px 3px 5px 6px #F3F4F6;
 }
+    /* filter: drop-shadow(3px 3px 10px #333); */
+    
+
 
 .card-img {
-    width:20rem;
+    width:18rem;
     height:17rem;
-    border-radius:1.5rem;
+    /* border-radius:1.5rem; */
     margin:1rem 0;
 }
 
@@ -23,7 +27,8 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    color:#4F4F4F
+    color:#4F4F4F;
+    padding:0 1rem;
 }
 
 .star-img{
