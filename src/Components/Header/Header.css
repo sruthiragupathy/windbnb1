@@ -110,7 +110,7 @@ border-bottom-right-radius: 1rem;
 
 
 .location li{
-    padding:0.75rem;
+    padding:1rem;
 
     
 }
@@ -118,7 +118,7 @@ border-bottom-right-radius: 1rem;
 .location{
     width: 48%;
     color:#4F4F4F;
-    margin-block-end:1.35em;
+    margin-block-end:0.55em;
     margin-left:0.75rem;
     
 }
@@ -247,4 +247,20 @@ input:focus,button:focus{
 
 .guest-color{
     color:#BDBDBD;
+}
+
+.guests button{
+    background:#2563EB;
+    border: 1px solid var(--light-gray1);
+    font-family:Montserrat;
+    border-radius:0.5rem;
+    color:var(--light-gray);
+    margin-right:4rem;
+    cursor: pointer;
+
+
+}
+
+.guests button:hover{
+    background:#3B82F6;
 }

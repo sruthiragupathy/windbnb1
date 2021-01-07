@@ -1,6 +1,6 @@
 .card{
     width:20rem;
-    padding:0.75rem;
+    padding:0.5rem;
     display:flex;
     flex-direction:column;
     
@@ -9,7 +9,7 @@
     color:#333;
     /* border:1px solid #9CA3AF; */
     border-radius:1rem;
-    box-shadow:         3px 3px 5px 6px #F3F4F6;
+    box-shadow: 3px 3px 5px 6px  #E5E7EB;
 }
     /* filter: drop-shadow(3px 3px 10px #333); */
     

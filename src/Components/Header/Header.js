@@ -88,7 +88,7 @@ const Header = (props) =>{
     }
     
     function dropDownHandler(e){
-        if(e.target.innerText){
+        if(e.target.innerText && e.target.innerText!=="OK"){
         fn(e.target.innerText);
         }
         // console.log(e.target.innerText);
@@ -132,6 +132,7 @@ const Header = (props) =>{
                                         <button name="adult" onClick={handleCounter}>-</button>
                                         <span>{count.adult}</span>
                                         <button name="adult" onClick = {handleCounter} >+</button>
+                                        
                                     </p>
                                 </li>
                                 <li>
@@ -142,8 +143,10 @@ const Header = (props) =>{
                                         <button name="child" onClick = {handleCounter} >+</button>
                                     </p>
                                 </li>
+                                <button onClick={dropDownHandler}>OK</button>
                                 
                             </ul>
+                            
                             <img src={close} alt="close-icon" onClick={dropDownHandler}></img>
                             </div>
                             )
